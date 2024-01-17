@@ -1,4 +1,4 @@
-# Data Cleaning On SQL
+# Data Cleaning In SQL
 
 ![](data.jpeg)
 
