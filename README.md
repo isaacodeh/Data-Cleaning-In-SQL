@@ -1,18 +1,17 @@
-# Global Super Store: Sales Analysis for 2016
+# Data Cleaning On SQL
 
 ![](data.jpeg)
 
 ## Introduction
 
-I came across the dataset online and admired how rich the data is as I have been trying to get my hands dirty with a very rich dataset to practice my skills of data cleaning, analysis and visualization.
+The goal of this data cleaning project was to enhance the quality and consistency of the data in the 'employees' table using Microsoft SQL Server. The dataset contains information about employees, including their names, salaries, hire dates, and departments. The cleaning process addressed missing values, duplicate records, data type conversion, handling outliers, and ensuring consistent data entry.
 
-**Power BI Concepts applied:**
-- DAX Concepts:
-                Calculated column,
-                Custom Column,
-                Year(),
-                IF().
-- Data Modelling: Star Schema (*:1)
+**Common data issues that require cleaning:**
+
+- Missing Data: Missing values in a dataset can lead to inaccurate calculations or incomplete analysis.
+- Duplicate Data: Duplicate records can cause overestimation or underestimation of certain metrics and affect the overall data quality.
+- Inconsistent Data: Inconsistent data formats, units, or representations can create confusion and hinder data analysis.
+- Invalid Data: Data that does not adhere to predefined rules or constraints is considered invalid and can cause errors or misleading results.
 
 ----
 ## Problem Statement
