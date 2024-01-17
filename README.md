@@ -14,12 +14,13 @@ The goal of this data cleaning project was to enhance the quality and consistenc
 - Invalid Data: Data that does not adhere to predefined rules or constraints is considered invalid and can cause errors or misleading results.
 
 ----
-## Problem Statement
-- How long on average does an order take before delivery?
-- What is the total sales made yearly since 2012? Has sales been on the increase since over the yers?
-- Which of our customers are most important?
-- Which of our products make the greatest profit and which products run the store into loss?
-- Any other relevant data-driven insight into our sales. 
+## Data Cleaning Requirments in this project
+1. Dealing with Missing Values
+2. Checking for Duplicate Records
+3. Data Type Conversion (Date from text to YYYY-MM-DD)
+4. Checking for Outliers in Numerical Fields
+5. Checking for Inconsistent Data Entry (Case Type) in String Fields
+6. Data Transformation (Adding New Fields)
 ## Data Sourcing
 Not until I came up with the above mentioned questions did I went ahead to get the data. I then downloaded the csv file, and extracted it into Power BI for clening, analysis and visualization.
 
