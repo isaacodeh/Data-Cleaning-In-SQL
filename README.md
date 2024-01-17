@@ -1,6 +1,6 @@
 # Data Cleaning In SQL
 
-![](data.jpeg)
+![](Data-Cleaning SQL.jpeg)
 
 ## Introduction
 
