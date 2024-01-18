@@ -73,6 +73,8 @@ Result: no records found indicates no sal above 10k
 5. Checking for Inconsistent Data Entry (Case Type) in String Fields
 Queries were employed to standardize the case of names by capitalizing the first letter of the first and last names while making the rest lowercase.
 
+![](casetype.png)
+
 *The quiries to achieve this can prove confusing for some, hence it will be broken down to aid clarity
 
 - Capitalize the first letter of the first name
