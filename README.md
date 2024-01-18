@@ -25,6 +25,8 @@ The goal of this data cleaning project was to enhance the quality and consistenc
 ## Data Sourcing
 The fictional data was created within Microsoft SQL server using the CREATE TABLE Syntax and twenty (20) Records of data where inserted as detailed below
 
+![](SQLtable.png)
+
  EMPLOYEES TABLE with five (5) FIELDS namely
 1. EMPLOYEE_ID, data type INT
 2. EMPLOYEE_NAME, data type VARCHAR
