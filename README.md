@@ -46,6 +46,8 @@ Missing values in the 'department' column were handled by using the COALESCE fun
 	COALESCE(department, 'Unknown') AS department
 FROM employees;`
 
+![](missingvals.png)
+
 2. Checking for Duplicate Records
 Duplicate records were identified using the DISTINCT keyword, indicating that there are indeed duplicate entries in the dataset. Further investigation and actions, such as removing or consolidating duplicates, are recommended based on the specific use case.
 
@@ -62,6 +64,8 @@ The 'hire_date' column was converted from a text format to the standard date for
 	CONVERT(DATE, hire_date, 23) AS hire_date
 FROM employees;`
 
+![](dataconv.png)
+
 4. Checking for Outliers in Numerical Fields
 An assumption was made that the salary range should be between 0 and 100,000. A query was executed to identify any salaries outside this range. No records were found, indicating that the salaries in the dataset are within the expected range.
 
@@ -72,8 +76,6 @@ Result: no records found indicates no sal above 10k
 
 5. Checking for Inconsistent Data Entry (Case Type) in String Fields
 Queries were employed to standardize the case of names by capitalizing the first letter of the first and last names while making the rest lowercase.
-
-![](casetype.png)
 
 *The quiries to achieve this can prove confusing for some, hence it will be broken down to aid clarity
 
@@ -99,8 +101,21 @@ Queries were employed to standardize the case of names by capitalizing the first
 		lower(Substring(employee_name, charindex(' ', employee_name, 1) + 2,len(employee_name))) as employee_name 
 from employees;`
 
+![](casetype.png)
 
+6. Data Transformation (Adding New Fields)
+A new field 'LOS' (Length of Service) was added to calculate the years of service by subtracting the 'hire_date' from the current date.
 
+`SELECT 
+	employee_id, 
+	employee_name,
+	salary,
+	hire_date,
+	department,
+	DATEDIFF(YEAR, hire_date, GETDATE()) AS 'LOS' 
+FROM employees;`
+
+![]()
 
 
 ## DATA MODELLING
