@@ -21,13 +21,16 @@ The goal of this data cleaning project was to enhance the quality and consistenc
 4. Checking for Outliers in Numerical Fields
 5. Checking for Inconsistent Data Entry (Case Type) in String Fields
 6. Data Transformation (Adding New Fields)
+   
 ## Data Sourcing
-Not until I came up with the above mentioned questions did I went ahead to get the data. I then downloaded the csv file, and extracted it into Power BI for clening, analysis and visualization.
+The fictional data was created within Microsoft SQL server using the CREATE TABLE Syntax and twenty (20) Records of data where inserted as detailed below
 
-It contains 3 sheets/tables:
-1. ORDERS with 51,291 rows and 24 columns
-2. PEOPLE with 24 rows and 2 columns
-3. RETURNS with 1079 rows and 3 columns
+ EMPLOYEES TABLE with five (5) FIELDS namely
+1. EMPLOYEE_ID, data type INT
+2. EMPLOYEE_NAME, data type VARCHAR
+3. SALARY, data type DECIMAL
+4. HIRE_DATE, data type VARCHAR
+5. DEPARTMENT, data type VARCHAR
 ----
 ## Data Transformation/Cleaning:
 Data was efficiently cleaned and transformed with the Power Query Editor of Power BI.
