@@ -35,19 +35,71 @@ The fictional data was created within Microsoft SQL server using the CREATE TABL
 5. DEPARTMENT, data type VARCHAR
 ----
 ## Data Transformation/Cleaning:
-Data was efficiently cleaned and transformed with the Power Query Editor of Power BI.
-[a screenshot of the applied steps]
-Some of the applied steps included 
+1. Dealing with Missing Values
+Missing values in the 'department' column were handled by using the COALESCE function to replace them with 'Unknown'. This ensures that all records have a valid department designation.
 
-- Making first row as headers in the PEOPle and RETURN tables.
-- Analytical transformation of the 'order table';
-To have an idea of how long it takes on average for orders to be dilevered, [delivery days] need to be calculated.
- Using "custom columns", 
-`delivery days = [shipped date] - [order date]`
-- created new column for year of order date and named: [Order Year]
-- ADDING conditional column to the 'Returns Table' to assign a numeric value to the Return response of YES and NO. If YES, then 1, else 0.
-`Return Orders = IF(Returns[Returned] = "Yes", 1, 0)`
-- Datatype then chnged from 'TEXT' TO 'WHOLE NUMBER'.
+`SELECT
+	employee_id,
+	employee_name,
+	salary,
+	hire_date,
+	COALESCE(department, 'Unknown') AS department
+FROM employees;`
+
+2. Checking for Duplicate Records
+Duplicate records were identified using the DISTINCT keyword, indicating that there are indeed duplicate entries in the dataset. Further investigation and actions, such as removing or consolidating duplicates, are recommended based on the specific use case.
+
+`SELECT DISTINCT * FROM employees;`
+
+4. Data Type Conversion (Date from text to YYYY-MM-DD)
+The 'hire_date' column was converted from a text format to the standard date format (YYYY-MM-DD) using the CONVERT function.
+
+`SELECT
+	employee_id,
+	employee_name,
+	salary,
+	department,
+	CONVERT(DATE, hire_date, 23) AS hire_date
+FROM employees;`
+
+4. Checking for Outliers in Numerical Fields
+An assumption was made that the salary range should be between 0 and 100,000. A query was executed to identify any salaries outside this range. No records were found, indicating that the salaries in the dataset are within the expected range.
+
+`SELECT * FROM employees
+WHERE salary < 0 OR salary > 100000;`
+
+Result: no records found indicates no sal above 10k
+
+5. Checking for Inconsistent Data Entry (Case Type) in String Fields
+Queries were employed to standardize the case of names by capitalizing the first letter of the first and last names while making the rest lowercase.
+
+*The quiries to achieve this can prove confusing for some, hence it will be broken down to aid clarity
+
+- Capitalize the first letter of the first name
+
+  `select Upper(Left(Substring(employee_name, 1, charindex(' ', employee_name, 1) -1),1)) from employees`
+- Make the rest of the first name lowercase
+
+  `select lower(Substring(employee_name, 2, charindex(' ', employee_name) - 2)) from employees`
+- Capitalize the first letter of the last name
+
+  `select Upper(Left(Substring(employee_name, charindex(' ', employee_name, 1) + 1, 1), 1)) from employees`
+- Make the rest of the last name lowercase
+
+  `select lower(Substring(employee_name, charindex(' ', employee_name, 1) + 2, len(employee_name))) from employees`
+- puting it altogether ( 1+2 space 3+4)
+
+  `select	
+		Upper(Left(Substring(employee_name, 1, charindex(' ', employee_name, 1) -1),1)) + 
+		lower(Substring(employee_name, 2, charindex(' ', employee_name) - 2))
+		+ ' ' +
+		Upper(Left(Substring(employee_name, charindex(' ', employee_name, 1) + 1, 1), 1)) + 
+		lower(Substring(employee_name, charindex(' ', employee_name, 1) + 2,len(employee_name))) as employee_name 
+from employees;`
+
+
+
+
 
 ## DATA MODELLING
 Power BI automatically connected related tables resulting in a star schema model.
