@@ -119,7 +119,7 @@ FROM employees;`
 ![](data_trans.png)
 
 ### BONUS: Stored Procedure
-A stored procedure was written to replace the lengthy query used to clean the inconsistnent data etry in the EMPLOYEE_NAME field.
+A stored procedure was written to replace the lengthy query used to clean the inconsistnent data entry in the EMPLOYEE_NAME field.
 
 ![](Stored-Procedure.png)
 
