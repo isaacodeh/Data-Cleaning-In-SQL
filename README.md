@@ -23,7 +23,7 @@ The goal of this data cleaning project was to enhance the quality and consistenc
 6. Data Transformation (Adding New Fields)
    
 ## Data Sourcing
-The fictional data was created within Microsoft SQL server using the CREATE TABLE Syntax and twenty (20) Records of data where inserted as detailed below
+The fictional data was created within Microsoft SQL server using the CREATE TABLE Syntax and twenty (20) Records of data were inserted as detailed below
 
 ![](SQLtable.png)
 
